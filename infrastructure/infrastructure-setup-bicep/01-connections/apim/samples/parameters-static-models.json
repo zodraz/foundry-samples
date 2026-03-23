@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "projectResourceId": {
+      "value": "/subscriptions/fd892721-fbea-4f9d-b961-db12a74a90a7/resourceGroups/feedbackforge-rg/providers/Microsoft.CognitiveServices/accounts/feedbackforge-resource/projects/feedbackforge-prj"
+    },
+    "apimResourceId": {
+      "value": "/subscriptions/fd892721-fbea-4f9d-b961-db12a74a90a7/resourceGroups/rg-ai-hub-citadel-dev/providers/Microsoft.ApiManagement/service/apim-7gwe6ds2kqkdm001"
+    },
+    "apiName": {
+      "value": "feedbackforgev2"
+    },
+    "connectionName": {
+      "value": "feedbackforgev3-connection"
+    },
+    "authType": {
+      "_comment": "Set to ApiKey or ProjectManagedIdentity",
+      "value": "ApiKey"
+    },
+    "isSharedToAll": {
+      "value": false
+    },
+    "deploymentInPath": {
+      "_comment": "true or false - Set based on setup guide to avoid 404 errors in agents",
+      "value": "true"
+    },
+    "inferenceAPIVersion": {
+      "_comment": "Set a proper value or leave empty if your APIM backend does not need it. Set based on setup guide to avoid 404 errors in agents",
+      "value": "2024-02-01"
+    },
+    "deploymentAPIVersion": {
+      "value": "2024-02-01"
+    },
+    "staticModels": {
+      "value": [
+        {
+          "name": "gpt-5.1-chat",
+          "properties": {
+            "model": {
+              "name": "gpt-5.1-chat",
+              "version": "2025-11-13",
+              "format": "OpenAI"
+            }
+          }
+        },
+        {
+          "name": "text-embedding-3-small",
+          "properties": {
+            "model": {
+              "name": "text-embedding-3-small",
+              "version": "1",
+              "format": "OpenAI"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
